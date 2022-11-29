@@ -21,7 +21,7 @@ type PinnedRepo = {
 };
 
 const pinnedRepos = await fetch(
-  "https://gh-pinned.nxl.sh/api/user/nearwizard"
+  "https://gh-pinned.nxl.sh/api/user/near-wizard"
 ).then(async (response) => {
   return (await response.json()) as PinnedRepo[];
 });
