@@ -4,16 +4,6 @@ title: "nearwizard • faq"
 description: "Questions frequently asked to me"
 ---
 
-### Q1
-
-A1
-
-<br />
-
-### Why is your name nearwizard?
-
-Checkout [why.nexxel.dev](https://why.nexxel.dev).
-
 <br />
 
 ### When did you start coding?
