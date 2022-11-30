@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Choosing a DB Deep Dive"
+title: "Choosing a DB Deep Dive P1 Intro and DB Server HDD vs SDD"
 description: "Going a little too far into what to consider when choosing a DB"
 pubDate: "November 30, 2022"
 ---
@@ -8,39 +8,47 @@ pubDate: "November 30, 2022"
 Annectdote about time interacting with infra or choosing DB
 
 ## Prerequisites
-
+<br />
 
 ## Why do we use Databases
-
+<br />
 If you and a friend want to access the same data in an application, 
 or if you want to access the same data again in the future (persistance) such that it's not on your local device you need a database!
-
+<br />
 Typically a client like a web browser will interact with a web server, 
 and that server will interact with a database
-
+<br />
 Insert image of 2+ clients -> server -> DB
 
 ## Objectives of Database
 - Fast reads
 - Fast wrties
 - Persistant and durable data
+<br />
+
+
 
 So what affects these?
-
+<br />
 Memory and disk HDD and SSD
 
 ## HDD OR SSD
 
-TLDR general advice: 
+**TLDR** general advice: 
 Use hard drives and upgrade RAM memory as needed
+<br />
 Tradeoffs & Considerations
 - Slower when we read from disk (but if RAM memory is large enough to hold DB this won't matter)
 - We should aim for sequential operations due to physical movement of HDD
 - MUCH Cheaper than SSDs
+<br />
 
 If DB size will exceed 200GB, fine, tell Jerry in infra to get the SSD
 
-Long Version
+<br />
+<br />
+
+**Long Version**
 
 There are 3 technical factors to consider when chosing between HDD and SDD
 
@@ -64,7 +72,7 @@ if (server.availableRAM >= database.size) {
 }
 ```
 
-#### ItDependsOnHowYouUseYourData
+**ItDependsOnHowYouUseYourData()**
 
 If your available memory < database size then you may need to read from disk 
 which is when HDD vs SSD actually may matter. This is compounded if you are 
@@ -86,10 +94,12 @@ If you know your DB will be very large eg: 200GB+ then it's probably a suitable 
 2. If you are often accessing all parts of your data fairly equally 
 (read as almost no one, if you don't know if you do or not, odds are you're not)
 
-Same advice as above but lower the threshold from 200GB+ to the size of the RAM you can reasonably upgrade to.
+Same advice as above but lower the threshold from 200GB+ to twice the size of the RAM you can reasonably upgrade to
+(since at that point you will be reading from disk half the time).
 
 
 
-That's it for today, damn this was a long one. If you made it this far, please do comment and show off your new blog. I would really appreciate it!
+That's it for today, damn this was a long one. If you made it this far, 
+please comment, I would really appreciate it!
 
 Thank you for reading!
