@@ -27,7 +27,7 @@ export const EmailSelect = () => {
                   active ? "bg-neutral-800" : ""
                 }`}
                 onClick={() =>
-                  navigator.clipboard.writeText("jrodbtllr138@gmail.com")
+                  navigator.clipboard.writeText("jrodbtllr138+nearwizard@gmail.com")
                 }
               >
                 <div className="flex justify-between">
